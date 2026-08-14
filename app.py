@@ -78,7 +78,7 @@ Tell the user to verify ingredients with the restaurant or manufacturer.
             with st.spinner("🤖 MenuMind is analyzing your image..."):
 
                 response = client.models.generate_content(
-                    model="gemini-2.5-flash",
+                    model="gemini-3.6-flash",
                     contents=[prompt, image]
                 )
 
