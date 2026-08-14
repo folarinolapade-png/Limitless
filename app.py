@@ -97,13 +97,9 @@ Tell the user to verify ingredients with the restaurant or manufacturer.
 
         except Exception as error:
 
-            st.error(
-                "MenuMind could not complete the scan."
-            )
-
-            st.caption(
-                "Check that your Gemini API key and requirements.txt are set up correctly."
-            )
+          st.error("MenuMind could not complete the scan.")
+st.exception(error)  
+                
 
 else:
 
