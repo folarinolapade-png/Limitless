@@ -66,20 +66,12 @@ The user wants to check for:
 
 Analyze visible food, menu text, or ingredient-label text.
 
-Give your answer in this format:
+Explain:
+1. Possible sources of {allergy}
+2. Anything that is uncertain
+3. Whether the image is clear enough to make a useful assessment
 
-🔴 POSSIBLE ALLERGEN
-Explain what in the image may contain {allergy}.
-
-🟢 NO OBVIOUS ALLERGEN FOUND
-Explain if you do not see an obvious source of {allergy}.
-
-🟡 UNCERTAIN
-Explain anything that cannot be determined from the image.
-
-IMPORTANT:
-Do not claim that food is completely safe or allergen-free.
-If the image is unclear, say that it is unclear.
+Never claim that food is completely safe or allergen-free.
 Tell the user to verify ingredients with the restaurant or manufacturer.
 """
 
@@ -92,14 +84,12 @@ Tell the user to verify ingredients with the restaurant or manufacturer.
 
             st.divider()
             st.subheader("🔎 MenuMind Results")
-
             st.write(response.text)
 
         except Exception as error:
 
-          st.error("MenuMind could not complete the scan.")
-st.exception(error)  
-                
+            st.error("MenuMind could not complete the scan.")
+            st.exception(error)
 
 else:
 
