@@ -1,10 +1,8 @@
-Enter this in Enter file contents. This is our first working version of MenuMind — it creates the app screen, allergy selector, image upload, and a safe-results area. We’ll connect Gemini after this file is saved.
 import streamlit as st
 
 st.set_page_config(
     page_title="MenuMind AI",
-    page_icon="🍽️",
-    layout="centered"
+    page_icon="🍽️"
 )
 
 st.title("🍽️ MenuMind AI")
@@ -16,8 +14,8 @@ st.write(
 )
 
 st.warning(
-    "⚠️ MenuMind is an AI assistant. It cannot guarantee that food "
-    "is allergen-free. Always check with the restaurant or food manufacturer."
+    "⚠️ AI cannot guarantee that food is allergen-free. "
+    "Always check with the restaurant or food manufacturer."
 )
 
 st.divider()
@@ -47,12 +45,16 @@ if uploaded_file:
     )
 
     st.info(
-        f"🔎 MenuMind is ready to check this image for possible "
-        f"{allergy} allergens."
+        "MenuMind is ready to check this image for possible "
+        + allergy
+        + " allergens."
     )
 
     if st.button("🔍 Scan with MenuMind AI"):
-        st.success("Scan button working! Gemini AI will be connected next.")
+        st.success(
+            "The scan button is working! "
+            "Gemini AI will be connected next."
+        )
 else:
     st.info("👆 Upload a menu or food-label photo to get started.")
 
